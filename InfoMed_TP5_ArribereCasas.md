@@ -26,6 +26,10 @@ Las relaciones se ven dictadas por las foreign keys que vinculan las distintas t
 
 ## 4. ¿Considera que la base de datos está normalizada? En caso que no lo esté, ¿cómo podría hacerlo? Nota: no debe normalizar la base de datos, solo explicar como lo haría.
 
+La base de datos presentada no está completamente normalizada. Parece cumplir con los requisitos en gran escala (normas formales 1 y 2) pero se presentan ciertas discrepancias en lo que concierne a la tercera norma formal.  Hay tablas correctamente normalizadas, por ejemplo SexoBiológico, donde se delimitan los géneros mediante un id_sexo como PK, y en la tabla Pacientes donde se usa el mismo id como FK. Esto es útil para evitar redundancias, ya que garantiza que solo existan dos valores ("Masculino" y "Femenino"), evitando que los usuarios ingresen variaciones incorrectas como "Hombre" o "Mujer". Esta viveza a su vez se ausenta en la tabla Pacientes donde los campos relacionados con la ciudad muestran registros con errores de escritura como "Bs Aires", "Buenos Aires" y "buenos aires". Para corregir esta inconsistencia, se debería crear una tabla específica para las ciudades, asignando a cada una un `id_ciudad` que se use como FK en la tabla Pacientes (misma dinámica que con SexoBiológico), eliminando la redundancia (e incumplimiento de la tercera norma formal).
+
+En la tabla de Consultas, sería útil normalizar el código de SNOMED en lugar de permitir que los médicos ingresen sus propios códigos en base al diagnóstico manualmente. Esto evitaría discrepancias generalmente ocasionadas por errores de tipeo y garantiza que todos los registros utilicen un mismo estándar. Podría normalizarse cargando una nueva tabla donde se enlistan los distintos tipos de diagnósticos y donde su PK identifique el código SNOMED.
+
 # Parte 2: SQL
 
 ## 1. Cuando se realizan consultas sobre la tabla paciente agrupando por ciudad los tiempos de respuesta son demasiado largos. Proponer mediante una query SQL una solución a este problema.
