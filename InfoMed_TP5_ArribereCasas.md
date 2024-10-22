@@ -18,7 +18,11 @@ Para armar el diagrama entidad-relación identificamos aquella información de l
 
 Las relaciones se ven dictadas por las foreign keys que vinculan las distintas tablas. 
 
+![Diagrama Entidad Relacion](Figuras/diagrama_entidad_relacion.png)
+
 ## 3. Armar el Modelo relacional de la base de datos dada.
+
+![Modelo Relacional](Figuras/modelo_relacional.png)
 
 ## 4. ¿Considera que la base de datos está normalizada? En caso que no lo esté, ¿cómo podría hacerlo? Nota: no debe normalizar la base de datos, solo explicar como lo haría.
 
@@ -93,7 +97,7 @@ Las relaciones se ven dictadas por las foreign keys que vinculan las distintas t
 
 ![Solución - Query 16](Figuras/SQL_16.png)
 ![Solución - Query 16.1](Figuras/SQL_16_bis.png)
-![Solución - Query 16.2](Figuras/SQL_16_bis._2png)
+![Solución - Query 16.2](Figuras/SQL_16_bis_2png)
 ![Solución - Query 16.3](Figuras/SQL_16_bis_3.png)
 
 ## 17. Obtener el nombre del medicamento junto con el total de recetas prescritas para ese medicamento, el nombre del médico que lo recetó y el nombre del paciente al que se le recetó, ordenado por total de recetas en orden descendente.
